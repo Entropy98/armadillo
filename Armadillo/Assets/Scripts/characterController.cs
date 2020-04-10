@@ -18,7 +18,7 @@ public class characterController : MonoBehaviour
 	int turnThreshold=53;
 
 	int doubleBounceThreshold=20;
-	int doubleBounceCounter=0;
+	int doubleBounceCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class characterController : MonoBehaviour
     	body = GetComponent<Rigidbody>();
     	right = new Vector3(armadillo.acceleration,0,0);
     	left = new Vector3(armadillo.acceleration*-1,0,0);
+    	doubleBounceCounter=doubleBounceThreshold;
     }
 
     void Flip(float torque){
